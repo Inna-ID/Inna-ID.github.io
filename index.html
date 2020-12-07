@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aggregator</title>
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/libs.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <!-- <div class="wrapper"> -->
+    <div class="overflow"></div>
+<header class="header header-desktop">
+    <div class="header__row header__top-block">
+        <div class="container">
+            <div class="row flex-row flex-row_adjustable">
+                <div class="col header__links">
+                    <a href="index.html" class="header__logo logo">shop<br>happy</a>
+                    <a href="#" class="header__catalog-link catalog-link button button_m blue-btn">
+                        <span class="link-name"><span class="menu-icon jam jam-menu"></span>Каталог</span>
+                        <span class="link-description">Товары для детейлинга</span>
+                    </a>
+                </div>
+                
+                <div class="col header__menu menu">
+                    <div class="menu__body">
+                        <ul class="menu__list">
+                            <li>
+                                <a data-modal="select-city_modal-window" class="menu__link menu__link-region" href="#">Ваш регион:
+                                    <span class="city">
+                                        <span class="menu-icon jam jam-map"></span>
+                                        <span class="value">Москва</span>
+                                    </span>
+                                </a>
+                                <div id="you-city" class="you-city__block active">
+    <h2 class="subtitle_small you-city__text">Ваш город - <span class="value">Москва</span>?</h2>
+    <div class="you-city__buttons-wrap">
+        <button  data-close="you-city" class="button button_s blue-btn">Да, верно</button>
+        <button data-modal="select-city_modal-window" class="link-button open-modal">Нет, не верно</button>
+    </div>
+</div>
+
+                            </li>
+                            <li>
+                                <a class="menu__link" href="#">
+                                    <span class="menu-icon jam jam-user"></span>
+                                    Войти
+                                </a>
+                            </li>
+                            <li>
+                                <a class="menu__link menu__basket-link basket-link" href="checkout1.html">
+                                    <span class="menu-icon jam jam-shopping-cart"></span>
+                                    Корзина
+                                    <span data-item_in_basket="2" class="items-in-basket">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__row header__bottom-block">
+        <div class="container">
+            <div class="flex-row">
+                <div class="header__menu menu">
+                    <!-- <div class="menu__icon icon-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</div> -->
+<div class="menu__body">
+    <ul class="menu__list">
+        <li>
+    <a class="menu__link" href="articles-reviews.html">Статьи и отзывы</a>
+</li>
+<li>
+    <a class="menu__link" href="payment.html">Оплата и доставка</a>
+</li>
+<li>
+    <a class="menu__link" href="about-us.html">О нас</a>
+</li>
+<li>
+    <a class="menu__link" href="contacts.html">Контакты</a>
+</li>
+    </ul>
+</div>
+                </div>
+                <div class="header__search">
+                    <form id="search-form" class="search-form search" action="">
+    <input class="header__search-input search__input" type="text"
+        placeholder="Поиск по наименованию или артикулу">
+    <button class="header__search-btn search__btn green-btn"><span class="jam jam-search"></span></button>
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="catalog-preview">
+    <div class="row catalog-preview__container">
+        <div class="col-1 col-sm-2 col-lg-3 col-left category-block category">
+            <ul class="category__list">
+                <li>
+                    <a class="category__link" data-subcategory="subcategory_1" href="#">Для дома</a>
+                </li>
+                <li>
+                    <a class="category__link" data-subcategory="subcategory_2" href="#">Для авто</a>
+                </li>
+                <li>
+                    <a class="category__link" data-subcategory="subcategory_3" href="#">Для сада</a>
+                </li>
+                <li>
+                    <a class="category__link" data-subcategory="subcategory_2" href="#">Уход</a>
+                </li>
+                <li>
+                    <a class="category__link" data-subcategory="subcategory_3" href="#">Шины</a>
+                </li>
+                <li>
+                    <a class="category__link" data-subcategory="subcategory_1" href="#">Для салона</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-11 col-sm-10 col-lg-9 col-right subcategory-block subcategory">
+            <!-- subcategory_1 -->
+            <ul id="subcategory_1" class="subcategories__list active">
+                <li>
+                    <a class="subcategory__title text_l" href="#">Средства для стирки</a>
+                    <ul class="subcategory__list">
+                        <li>
+                            <a class="subcategory__link" href="#">Стиральные порошки</a>
+                        </li>
+                        <li>
+                            <a class="subcategory__link" href="#">Гели и жидкости для стирки</a>
+                        </li>
+                        <li>
+                            <a class="subcategory__link" href="#">Отбеливатели</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="subcategory__title text_l" href="#">Средства для уборки</a>
+                    <ul class="subcategory__list">
+                        <li>
+                            <a class="subcategory__link" href="#">Средства для мытья окон</a>
+                        </li>
+                        <li>
+                            <a class="subcategory__link" href="#">Швабры</a>
+                        </li>
+                        <li>
+                            <a class="subcategory__link" href="#">Тряпки</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="subcategory__title text_l" href="#">Средства для стирки</a>
+                    <ul class="subcategory__list">
+                        <li>
+                            <a class="subcategory__link" href="#">Стиральные порошки</a>
+                        </li>
+                        <li>
+                            <a class="subcategory__link" href="#">Гели и жидкости для стирки</a>
+                        </li>
+                        <li>
+                            <a class="subcategory__link" href="#">Отбеливатели</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- subcategory_2 -->
+            <ul id="subcategory_2" class="subcategories__list">
+                <li>
+                    <a class="subcategory__title text_l" href="#">Средства для чистки</a>
+                    <ul class="subcategory__list">
+                        <li>
+                            <a class="subcategory__link" href="#">Губка из микрофибры</a>
+                        </li>
+                        <li>
+                            <a class="subcategory__link" href="#">Очиститель системы кондиционирования</a>
+                        </li>
+                        <li>
+                            <a class="subcategory__link" href="#">Рукавица из микрофибры</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="subcategory__title text_l" href="#">Моющие средства</a>
+                    <ul class="subcategory__list">
+                        <li>
+                            <a class="subcategory__link" href="#">Автошампунь сильно пенящийся</a>
+                        </li>
+                        <li>
+                            <a class="subcategory__link" href="#">Автошампунь-концентрат с воском</a>
+                        </li>
+                        <li>
+                            <a class="subcategory__link" href="#">Автошампунь сильно пенящийся</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- subcategory_3 -->
+            <ul id="subcategory_3" class="subcategories__list">
+                <li>
+                    <a class="subcategory__title text_l" href="#">Удобрения</a>
+                    <ul class="subcategory__list">
+                        <li>
+                            <a class="subcategory__link" href="#">Удобрение 1</a>
+                        </li>
+                        <li>
+                            <a class="subcategory__link" href="#">Удобрение 2</a>
+                        </li>
+                        <li>
+                            <a class="subcategory__link" href="#">Удобрение 3</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<header class="header header-mobile">
+	<div class="container">
+		<div class="header-mobile__links">
+			<a href="#" class="header-mobile__catalog-link catalog-link">
+				<span class="link-name"><i class="fas fa-stream"></i>Каталог</span>
+			</a>
+			<div class="header-mobile__menu-card-wrap">
+				<div data-toggle="header_mob_menu" class="icon-menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<a class="header-mobile__basket basket-link" href="checkout1.html">
+					<span class="menu-icon jam jam-shopping-cart"></span>
+					<span data-item_in_basket="2" class="items-in-basket">0</span>
+				</a>
+			</div>
+		</div>
+		<div class="header-mobile__search">
+			<form id="search-form" class="search-form search" action="">
+    <input class="header__search-input search__input" type="text"
+        placeholder="Поиск по наименованию или артикулу">
+    <button class="header__search-btn search__btn green-btn"><span class="jam jam-search"></span></button>
+</form>
+		</div>
+
+	</div>
+</header>
+<!-- hidden menu -->
+<div id="header_mob_menu" class="header_mob_menu menu__body">
+	<ul class="menu__list">
+		<li>
+			<a href="index.html" class="header-mobile__logo logo">shop<br>happy</a>
+		</li>
+		<li>
+			<a class="menu__link" href="#"><span class="icon jam jam-user"></span></i>Войти</a>
+		</li>
+		<li>
+    <a class="menu__link" href="articles-reviews.html">Статьи и отзывы</a>
+</li>
+<li>
+    <a class="menu__link" href="payment.html">Оплата и доставка</a>
+</li>
+<li>
+    <a class="menu__link" href="about-us.html">О нас</a>
+</li>
+<li>
+    <a class="menu__link" href="contacts.html">Контакты</a>
+</li>
+		<li>
+			<a data-modal="select-city_modal-window" class="menu__link" href="#">Ваш регион:
+				<span class="city">
+					<span class="value">Москва</span>
+				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- modal window - select city -->
+<div class="shadow">
+    <div id="select-city_modal-window" class="modal-window select-city-modal-window">
+        <div class="modal-window__content">
+            <button data-hide="select-city_modal-window" class="close-btn">
+                <span></span>
+            </button>
+            <h2 class="title modal-window__title">Город получения</h2>
+            <div class="search search-city">
+                <div class="search__field">
+                    <label for="search-city">Название города</label>
+                    <input id="search-city" class="search__input text text_l text_dark text_bold" type="text" value="Минск">
+                </div>
+                <div class="search__autocomplete autocomplete">
+    <ul class="autocomplete__list">
+        <li class="autocomplete__item">
+            <h3 class="autocomplete__city-name text text_l text_dark text_bold">Минск</h3>
+            <p class="autocomplete__area text text_m text_dark">Минская область</p>
+        </li>
+        <li class="autocomplete__item">
+            <h3 class="autocomplete__city-name text text_l text_dark text_bold">Москва</h3>
+            <p class="autocomplete__area text text_m text_dark">Московская область</p>
+        </li>
+        <li class="autocomplete__item">
+            <h3 class="autocomplete__city-name text text_l text_dark text_bold">Минск</h3>
+            <p class="autocomplete__area text text_m text_dark">Минская область</p>
+        </li>
+    </ul>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <section id="main-screen" class="page-section main-screen">
+            <div class="container container-stretched-s">
+                <div class="main-screen__carousel owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="main-screen__text-block">
+                            <h1 class="main-screen__title title_large text_light">Новый набор автокосметики</h1>
+                            <p class="main-screen__text subtitle_large text_light">Получите скидку 20%</p>
+                        </div>
+                        <img class="main-screen__img" src="img/slide1.jpg" alt="">
+                        <img class="main-screen__img_mob" src="img/slide_1_mob.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <div class="main-screen__text-block">
+                            <h1 class="main-screen__title title_large text_dark">набор автокосметики</h1>
+                            <p class="main-screen__text subtitle_large text_dark">Получите скидку 30%</p>
+                        </div>
+                        <img class="main-screen__img" src="img/slide1.jpg" alt="">
+                        <img class="main-screen__img_mob" src="img/slide_1_mob.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="main-screen__img" src="img/slide2.jpg" alt="">
+                        <img class="main-screen__img_mob" src="img/slide_1_mob.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <h1 class="title">Популярные категории</h1>
+                <div class="popular-category-list items-list owl-carousel owl-theme section-carousel">
+
+                    <a class="items-list__item" href="goods.html">
+                        <span class="items-list__image-wrap">
+                            <img class="items-list__image" src="img/category_item_1.png" alt="">
+                        </span>
+                        <p class="items-list__name text text_m text_dark text_bold">Для дома</p>
+                    </a>
+
+                    <a class="items-list__item" href="">
+                        <span class="items-list__image-wrap">
+                            <img class="items-list__image" src="img/category_item_2.png" alt="">
+                        </span>
+                        <p class="items-list__name text text_m text_dark text_bold">Для авто</p>
+                    </a>
+
+                    <a class="items-list__item" href="">
+                        <span class="items-list__image-wrap">
+                            <img class="items-list__image" src="img/category_item_3.png" alt="">
+                        </span>
+                        <p class="items-list__name text text_m text_dark text_bold">Для сада</p>
+                    </a>
+
+                    <a class="items-list__item" href="">
+                        <span class="items-list__image-wrap">
+                            <img class="items-list__image" src="img/category_item_4.png" alt="">
+                        </span>
+                        <p class="items-list__name text text_m text_dark text_bold">Уход</p>
+                    </a>
+
+                    <a class="items-list__item" href="">
+                        <span class="items-list__image-wrap">
+                            <img class="items-list__image" src="img/category_item_5.png" alt="">
+                        </span>
+                        <p class="items-list__name text text_m text_dark text_bold">Шины</p>
+                    </a>
+
+                    <a class="items-list__item" href="">
+                        <span class="items-list__image-wrap">
+                            <img class="items-list__image" src="img/category_item_6.png" alt="">
+                        </span>
+                        <p class="items-list__name text text_m text_dark text_bold">Для салона</p>
+                    </a>
+
+                    <a class="items-list__item" href="">
+                        <span class="items-list__image-wrap">
+                            <img class="items-list__image" src="img/category_item_6.png" alt="">
+                        </span>
+                        <p class="items-list__name text text_m text_dark text_bold">Для салона</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <h1 class="title">Последние отзывы</h1>
+                <div class="review-preview_main-page">
+                    <div class="row">
+                        <div class="col review-preview_main-page__block review-preview_main-page__block_left">
+                            <a id="review-preview_1" class="review-preview_main-page__item" href="#">
+                                <div class="review-preview__text-block">
+                                    <img class="review-preview_main-page__brand-image" src="img/brand_logo_color_montana.png"
+                                        alt="">
+                                    <h3 class="review-preview_main-page__title subtitle text_dark">Краска Montana</h3>
+                                    <p class="review-preview_main-page__description text text_l text_dark">Раскрась серые будни</p>
+                                </div>
+                                <div class="review-preview_main-page__image-wrap">
+                                    <img class="review-preview_main-page__image" src="img/review_prev_1.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col review-preview_main-page__block review-preview_main-page__block_right">
+                            <a id="review-preview_2" class="review-preview_main-page__item" href="#">
+                                <div class="review-preview_main-page__text-block">
+                                    <img class="review-preview_main-page__brand-image" src="img/brand_logo_color_sonax.png"
+                                        alt="">
+                                    <h3 class="review-preview_main-page__title subtitle">Набор SONAX</h3>
+                                    <p class="review-preview_main-page__description text text_l">Лучше подарка не найти</p>
+                                </div>
+                                <div class="review-preview_main-page__image-wrap">
+                                    <img class="review-preview_main-page__image" src="img/review_prev_2.png" alt="">
+                                </div>
+                            </a>
+                            <a id="review-preview_3" class="review-preview_main-page__item" href="#">
+                                <div class="review-preview_main-page__text-block">
+                                    <img class="review-preview_main-page__brand-image" src="img/brand_logo_color_poliboy.png"
+                                        alt="">
+                                    <h3 class="review-preview_main-page__title subtitle">Средство Poliboy</h3>
+                                    <p class="review-preview_main-page__description text text_l">Отличный помощник по дому</p>
+                                </div>
+                                <div class="review-preview_main-page__image-wrap">
+                                    <img class="review-preview_main-page__image" src="img/review_prev_3.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h1 class="title">Популярные товары</h1>
+                <div class="popular-product-list items-list owl-carousel owl-theme section-carousel">
+    <a class="items-list__item" href="product.html">
+        <span class="items-list__image-wrap">
+            <img class="items-list__image" src="img/pop_product_item_1.png" alt="">
+        </span>
+        <p class="items-list__name text text_m text_dark text_bold">Автокосметика</p>
+    </a>
+    <a class="items-list__item" href="">
+        <span class="items-list__image-wrap">
+            <img class="items-list__image" src="img/pop_product_item_2.png" alt="">
+        </span>
+        <p class="items-list__name text text_m text_dark text_bold">Аксессуары</p>
+    </a>
+    <a class="items-list__item" href="">
+        <span class="items-list__image-wrap">
+            <img class="items-list__image" src="img/pop_product_item_3.png" alt="">
+        </span>
+        <p class="items-list__name text text_m text_dark text_bold">Аэрозольные краски</p>
+    </a>
+    <a class="items-list__item" href="">
+        <span class="items-list__image-wrap">
+            <img class="items-list__image" src="img/pop_product_item_4.png" alt="">
+        </span>
+        <p class="items-list__name text text_m text_dark text_bold">Аэрозольные краски</p>
+    </a>
+    <a class="items-list__item" href="">
+        <span class="items-list__image-wrap">
+            <img class="items-list__image" src="img/pop_product_item_4.png" alt="">
+        </span>
+        <p class="items-list__name text text_m text_dark text_bold">Аэрозольные краски</p>
+    </a>
+    <a class="items-list__item" href="">
+        <span class="items-list__image-wrap">
+            <img class="items-list__image" src="img/pop_product_item_4.png" alt="">
+        </span>
+        <p class="items-list__name text text_m text_dark text_bold">Аэрозольные краски</p>
+    </a>
+    <a class="items-list__item" href="">
+        <span class="items-list__image-wrap">
+            <img class="items-list__image" src="img/pop_product_item_4.png" alt="">
+        </span>
+        <p class="items-list__name text text_m text_dark text_bold">Аэрозольные краски</p>
+    </a>
+</div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-12 footer__logo-block">
+                <a href="index.html" class="header__logo logo">shop<br>happy</a>
+                <p class="copy">2020 OOO UnitedTeam</p>
+            </div>
+            <div class="col-9 footer__menu menu">
+                <!-- <div class="menu__icon icon-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</div> -->
+<div class="menu__body">
+    <ul class="menu__list">
+        <li>
+    <a class="menu__link" href="articles-reviews.html">Статьи и отзывы</a>
+</li>
+<li>
+    <a class="menu__link" href="payment.html">Оплата и доставка</a>
+</li>
+<li>
+    <a class="menu__link" href="about-us.html">О нас</a>
+</li>
+<li>
+    <a class="menu__link" href="contacts.html">Контакты</a>
+</li>
+    </ul>
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- </div> -->
+</body>
+
+</html>
